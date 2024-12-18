@@ -1,0 +1,8 @@
+{
+  "operation": "Ligate",
+  "inputs": {
+    "dnas": ["ATGCGT", "CGTACG"], 
+    "output": "plasmid1"
+  },
+  "description": "Performs a ligation operation by concatenating DNA fragments into a single product. This operation uses DNA ligase and predicts cost and time."
+}

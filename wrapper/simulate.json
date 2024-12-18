@@ -1,0 +1,60 @@
+{
+    "id": "org.c9.function.bioinformatics.simulate",
+    "name": "Simulate DNA Construction",
+    "description": "Simulates a DNA construction workflow by executing a sequence of bioinformatics operations such as PCR, ligation, Golden Gate assembly, Gibson assembly, digestion, and transformation.",
+    "type": "function",
+    "keywords": [
+        "simulation",
+        "DNA construction",
+        "bioinformatics",
+        "workflow"
+    ],
+    "inputs": [
+        {
+            "name": "construction_steps",
+            "type": "list[object]",
+            "description": "A list of steps in the DNA construction workflow. Each step must specify the operation and inputs required for that operation."
+        }
+    ],
+    "outputs": [
+        {
+            "name": "results",
+            "type": "object",
+            "description": "An object containing the final DNA sequences, total cost, and total time of the simulated workflow."
+        }
+    ],
+    "examples": [
+        {
+            "input": {
+                "construction_steps": [
+                    {
+                        "operation": "PCR",
+                        "forward_oligo": "ATG",
+                        "reverse_oligo": "GCC",
+                        "template": "TemplateSequence",
+                        "output": "amplified_product"
+                    },
+                    {
+                        "operation": "Ligate",
+                        "dnas": ["amplified_product", "GCC"],
+                        "output": "ligated_product"
+                    }
+                ]
+            },
+            "output": {
+                "results": {
+                    "sequences": {
+                        "ligated_product": "ATGTemplateSequenceGCCGCC"
+                    },
+                    "time": 75,
+                    "cost": 60
+                }
+            }
+        }
+    ],
+    "execution_details": {
+        "language": "Python",
+        "source": "bio_functions.py",
+        "execution": "simulate"
+    }
+}

@@ -43,6 +43,7 @@ def round_to_nearest_15(minutes):
 def simulate(constructionFile: ConstructionFile): 
     time = 0
     cost = 0
+    products = {}
     for step in constructionFile:
         if step.operation == 'Digest':
             result = perform_digest(step)
@@ -58,7 +59,9 @@ def simulate(constructionFile: ConstructionFile):
             result = perform_transform(step)
         time += result[2]
         cost +=result[1]
-        symbol_to_gene[step.output] = result  
+        if step.operation != 'Transform':
+            symbol_to_gene[step.output] = result.sequence
+            products[step.output] = result.sequence
     return symbol_to_gene, time, cost
 
 def resolve_gene_input(gene_input, dictionary):
