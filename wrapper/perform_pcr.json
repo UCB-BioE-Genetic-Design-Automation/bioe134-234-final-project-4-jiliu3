@@ -1,0 +1,35 @@
+{
+    "id": "org.c9.function.bioinformatics.perform_pcr",
+    "name": "Perform PCR",
+    "description": "Simulates a Polymerase Chain Reaction (PCR) to amplify DNA sequences.",
+    "type": "function",
+    "keywords": ["PCR", "DNA amplification", "bioinformatics"],
+    "inputs": [
+      {"name": "forward_oligo", "type": "string", "description": "Forward primer sequence or symbol."},
+      {"name": "reverse_oligo", "type": "string", "description": "Reverse primer sequence or symbol."},
+      {"name": "template", "type": "string", "description": "Template DNA sequence or symbol."},
+      {"name": "output", "type": "string", "description": "The name of the output product."}
+    ],
+    "outputs": [
+      {"type": "object", "description": "Simulated PCR product, cost, and time estimate."}
+    ],
+    "examples": [
+      {
+        "input": {
+          "forward_oligo": "ATGGTG",
+          "reverse_oligo": "TCACTA",
+          "template": "gfp",
+          "output": "PCR_Product"
+        },
+        "output": {
+          "result": {"product_sequence": "ATGGTG...TCACTA", "cost": 40, "time": 45}
+        }
+      }
+    ],
+    "execution_details": {
+      "language": "Python",
+      "source": "bio_functions.py",
+      "execution": "perform_pcr"
+    }
+  }
+  

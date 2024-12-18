@@ -1,0 +1,37 @@
+{
+    "id": "org.c9.function.bioinformatics.perform_transform",
+    "name": "Perform Transformation",
+    "description": "Simulates the transformation of DNA into a host strain.",
+    "type": "function",
+    "keywords": ["transformation", "DNA cloning", "bioinformatics"],
+    "inputs": [
+      {"name": "dna", "type": "string", "description": "The DNA sequence or symbol to transform."},
+      {"name": "strain", "type": "string", "description": "Host strain for transformation."},
+      {"name": "antibiotics", "type": "array", "description": "List of antibiotics for selection."},
+      {"name": "temperature", "type": "number", "description": "Temperature for transformation."},
+      {"name": "output", "type": "string", "description": "Name of the output product."}
+    ],
+    "outputs": [
+      {"type": "object", "description": "Transformation result, cost, and time estimate."}
+    ],
+    "examples": [
+      {
+        "input": {
+          "dna": "gfp",
+          "strain": "DH5a",
+          "antibiotics": ["G418"],
+          "temperature": 37,
+          "output": "Transformed_Product"
+        },
+        "output": {
+          "result": {"message": "Transformation successful", "cost": 55, "time": 45}
+        }
+      }
+    ],
+    "execution_details": {
+      "language": "Python",
+      "source": "bio_functions.py",
+      "execution": "perform_transform"
+    }
+  }
+

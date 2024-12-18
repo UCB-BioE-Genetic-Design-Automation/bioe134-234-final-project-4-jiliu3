@@ -1,0 +1,35 @@
+{
+    "id": "org.c9.function.bioinformatics.perform_digest",
+    "name": "Perform Digest",
+    "description": "Simulates a restriction enzyme digest on a DNA sequence.",
+    "type": "function",
+    "keywords": ["DNA digest", "restriction enzymes", "bioinformatics"],
+    "inputs": [
+      {"name": "dna", "type": "string", "description": "DNA sequence to digest."},
+      {"name": "enzymes", "type": "array", "description": "List of restriction enzymes to use."},
+      {"name": "fragSelect", "type": "integer", "description": "Index of the fragment to select."},
+      {"name": "output", "type": "string", "description": "The name of the output product."}
+    ],
+    "outputs": [
+      {"type": "object", "description": "Selected digest fragment, cost, and time estimate."}
+    ],
+    "examples": [
+      {
+        "input": {
+          "dna": "ATGACCATGATTACGGATTCA",
+          "enzymes": ["EcoRI"],
+          "fragSelect": 0,
+          "output": "Digest_Product"
+        },
+        "output": {
+          "result": {"sequence": "ATGACC", "cost": 10, "time": 30}
+        }
+      }
+    ],
+    "execution_details": {
+      "language": "Python",
+      "source": "bio_functions.py",
+      "execution": "perform_digest"
+    }
+  }
+  

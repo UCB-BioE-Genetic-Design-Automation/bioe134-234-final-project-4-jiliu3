@@ -1,0 +1,53 @@
+{
+    "id": "org.c9.function.bioinformatics.GoldenGate",
+    "name": "Golden Gate Assembly",
+    "description": "Performs a Golden Gate assembly operation using specified DNA fragments and a restriction enzyme.",
+    "type": "function",
+    "keywords": [
+        "genetics",
+        "Golden Gate",
+        "DNA assembly",
+        "restriction enzyme",
+        "bioinformatics"
+    ],
+    "inputs": [
+        {
+            "name": "dnas",
+            "type": "list[string]",
+            "description": "A list of DNA fragments to assemble."
+        },
+        {
+            "name": "enzyme",
+            "type": "string",
+            "description": "The restriction enzyme used for the Golden Gate assembly (e.g., BsaI, BbsI)."
+        },
+        {
+            "name": "output",
+            "type": "string",
+            "description": "The name of the output product after assembly."
+        }
+    ],
+    "outputs": [
+        {
+            "type": "string",
+            "description": "The resulting DNA sequence after Golden Gate assembly."
+        }
+    ],
+    "examples": [
+        {
+            "input": {
+                "dnas": ["ATGCGTACGTAGCTAG", "CGTATCGATCGTACG"],
+                "enzyme": "BsaI",
+                "output": "assembled_product"
+            },
+            "output": {
+                "result": "ATGCGTACGTAGCTAGCGTATCGATCGTACG"
+            }
+        }
+    ],
+    "execution_details": {
+        "language": "Python",
+        "source": "bio_functions.py",
+        "execution": "perform_goldengate"
+    }
+}
