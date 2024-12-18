@@ -61,6 +61,7 @@ def translate(sequence):
         protein += codon_table.get(codon, '_')  # Using '_' for unknown or stop codons
     return protein
 
+
 if __name__ == "__main__":
     # Example DNA sequence for demonstration
     dna_example = "ATGGCCATTGTAATGGGCCGCTGAAAGGGTGCCCGATAG"
